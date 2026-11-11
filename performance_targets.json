@@ -1,0 +1,84 @@
+{
+  "schema_version": 2,
+  "revision": "2026-10-23-reviewed",
+  "policy_id": "absolute-wall-us-reviewed-v3",
+  "unit": "us",
+  "metric": "api_to_completion_wall_time",
+  "primary_entry": "run",
+  "warmup": 50,
+  "iterations": 200,
+  "rounds": 5,
+  "statistic": "median_of_round_means",
+  "required_environment": {
+    "hardware": "Ascend 910C / Atlas A3",
+    "soc": "Ascend910_9382",
+    "logical_devices": 1,
+    "vector_cores": 48,
+    "cube_cores": 24,
+    "CANN": "9.1.0",
+    "driver": "25.5.t6.b001",
+    "architecture": "aarch64",
+    "os": "openEuler 24.03 LTS-SP3",
+    "python": "3.12.13",
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4+git5dd8ef3"
+  },
+  "case_sha256": "f0e6fdbf77c27960762db89253044323244e7ab4b549d2bf4e4d4d6fe0d8be76",
+  "cases": [
+    {
+      "case_name": "RowColInt8Quant_004_float16_random",
+      "input_shapes": [
+        [
+          257,
+          1026
+        ]
+      ],
+      "dtype": "float16",
+      "max_wall_us": 32
+    },
+    {
+      "case_name": "RowColInt8Quant_005_float16_random",
+      "input_shapes": [
+        [
+          128,
+          4096
+        ]
+      ],
+      "dtype": "float16",
+      "max_wall_us": 35
+    },
+    {
+      "case_name": "RowColInt8Quant_006_float16_random",
+      "input_shapes": [
+        [
+          1024,
+          4096
+        ]
+      ],
+      "dtype": "float16",
+      "max_wall_us": 73
+    },
+    {
+      "case_name": "RowColInt8Quant_007_float16_random",
+      "input_shapes": [
+        [
+          4096,
+          4096
+        ]
+      ],
+      "dtype": "float16",
+      "max_wall_us": 244
+    },
+    {
+      "case_name": "RowColInt8Quant_008_float16_random",
+      "input_shapes": [
+        [
+          4096,
+          256
+        ]
+      ],
+      "dtype": "float16",
+      "max_wall_us": 42
+    }
+  ]
+}
